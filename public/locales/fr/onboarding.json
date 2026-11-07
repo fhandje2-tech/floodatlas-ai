@@ -1,0 +1,50 @@
+{
+  "prepWorkspace": "Préparation de votre espace...",
+  "start": "Commencer",
+  "continue": "Continuer",
+  "welcomeName": "Bienvenue sur FloodAtlas IA, {{name}}.",
+  "welcomeDefault": "Bienvenue sur FloodAtlas IA.",
+  "setupIn2Min": "Configurons votre espace de travail en 2 minutes.",
+  "profileSetAs": "Nous avons configuré votre profil comme ",
+  "workspaceIncludes": "Votre espace de travail inclut : cartographie des risques, rapports automatisés pour les élus, et simulation de scénarios d'aménagement.",
+  "whereDoYouWork": "Sur quelle zone travaillez-vous ?",
+  "addUpTo5Zones": "Ajoutez jusqu'à 5 zones. Nous pré-chargerons les données de risque pour chacune.",
+  "searchAddress": "Rechercher une adresse",
+  "uploadFile": "Importer un fichier",
+  "searchPlaceholder": "Rechercher une adresse, commune, ou nom personnalisé...",
+  "typeLocationPrompt": "Tapez un lieu pour rechercher, ou Entrée pour ajouter une zone personnalisée.",
+  "dragDropPrompt": "Glissez-déposez votre fichier GeoJSON ou SHP ici",
+  "maxFileSize": "Taille maximum 50Mo",
+  "browseFiles": "Parcourir les fichiers",
+  "noZonesSelected": "Aucune zone sélectionnée.",
+  "whatArePriorities": "Quelles sont vos priorités territoriales ?",
+  "prioritiesDesc": "Ces choix personnaliseront les recommandations Ville Éponge de l'IA.",
+  "workspaceReady": "Votre espace projet est prêt.",
+  "fiveExpertModules": "5 modules experts propulsés par l'IA pour bâtir un territoire résilient.",
+  
+  "newProjectTitle": "Nouveau Projet",
+  "newProjectDesc": "Configurez un nouvel espace de travail isolé pour votre territoire.",
+  "projectName": "Nom du Projet",
+  "projectNamePlaceholder": "ex: Plan de prévention 2026",
+  "territoryZone": "Territoire / Zone",
+  "territoryZonePlaceholder": "Ville, région ou adresse...",
+  "yourProfile": "Votre Profil / Rôle",
+  "briefContext": "Contexte (Optionnel)",
+  "briefContextPlaceholder": "Quels sont les objectifs principaux de ce projet ?",
+  "cancel": "Annuler",
+  "createProject": "Créer le Projet",
+  
+  "roles": {
+    "Municipality": "Collectivité",
+    "Developer": "Aménageur",
+    "Consultancy": "Bureau d'études",
+    "RiskManager": "Gestionnaire de risques"
+  },
+  "priorities": {
+    "Desimpermeabilisation": "Désimperméabilisation (Ville Éponge)",
+    "GestionRuissellement": "Gestion des ruissellements",
+    "IlotsChaleur": "Réduction des îlots de chaleur",
+    "Vegetalisation": "Végétalisation urbaine",
+    "PreservationBiodiversite": "Préservation de la biodiversité"
+  }
+}

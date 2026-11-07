@@ -1,0 +1,29 @@
+{
+  "title": "Tableau de Bord",
+  "subtitle": "Gérez vos territoires et accédez aux modules d'analyse de résilience.",
+  "newProject": "Nouveau Projet",
+  "expertModules": "Modules Experts",
+  "recentProjects": "Vos Projets Récents",
+  "noProjects": "Aucun projet pour le moment. Créez votre premier projet !",
+  "modules": {
+    "mapping": {
+      "name": "Cartographie & Diagnostic IA",
+      "desc": "SmartMapping & Risques"
+    },
+    "reports": {
+      "name": "Génération de Rapports",
+      "desc": "Notes & Bilans de résilience"
+    },
+    "scenarios": {
+      "name": "Simulation Scénarios",
+      "desc": "Ville Éponge & Solutions fondées sur la nature"
+    },
+    "assistant": {
+      "name": "Assistant IA Expert",
+      "desc": "Conseiller territorial interactif"
+    }
+  },
+  "openProject": "Ouvrir",
+  "territory": "Territoire",
+  "resilienceIndex": "Indice de Résilience"
+}

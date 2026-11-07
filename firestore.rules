@@ -1,0 +1,106 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isValidUserProfile(data) {
+      return data.keys().hasAll(['email']) &&
+             data.email is string && data.email.size() <= 100 &&
+             (!data.keys().hasAll(['role']) || (data.role is string && data.role.size() <= 50)) &&
+             (!data.keys().hasAll(['name']) || (data.name is string && data.name.size() <= 100)) &&
+             (!data.keys().hasAll(['language']) || (data.language is string && data.language.size() <= 10)) &&
+             (!data.keys().hasAll(['onboardingComplete']) || data.onboardingComplete is bool) &&
+             (!data.keys().hasAll(['createdAt']) || data.createdAt == request.time || data.createdAt is string) &&
+             (!data.keys().hasAll(['updatedAt']) || data.updatedAt == request.time || data.updatedAt is string);
+    }
+
+    match /users/{userId} {
+      allow get: if isSignedIn() && request.auth.uid == userId;
+      allow list: if false; // No blanket reads
+      allow create: if isSignedIn() && request.auth.uid == userId && isValidUserProfile(incoming());
+      allow update: if isSignedIn() && request.auth.uid == userId &&
+        incoming().diff(existing()).affectedKeys().hasOnly(['role', 'name', 'language', 'onboardingComplete', 'email', 'updatedAt']) &&
+        (!incoming().keys().hasAll(['role']) || (incoming().role is string && incoming().role.size() <= 50)) &&
+        (!incoming().keys().hasAll(['email']) || (incoming().email is string && incoming().email.size() <= 100)) &&
+        (!incoming().keys().hasAll(['name']) || (incoming().name is string && incoming().name.size() <= 100)) &&
+        (!incoming().keys().hasAll(['language']) || (incoming().language is string && incoming().language.size() <= 10)) &&
+        (!incoming().keys().hasAll(['onboardingComplete']) || incoming().onboardingComplete is bool) &&
+        (!incoming().keys().hasAll(['updatedAt']) || incoming().updatedAt == request.time || incoming().updatedAt is string);
+      allow delete: if false;
+    }
+
+    function isValidProject(data) {
+      return data.keys().hasAll(['ownerId', 'name', 'zone']) &&
+             data.ownerId == request.auth.uid &&
+             data.name is string && data.name.size() <= 200 &&
+             data.zone is string && data.zone.size() <= 300 &&
+             (!data.keys().hasAll(['createdAt']) || data.createdAt == request.time || data.createdAt is string) &&
+             (!data.keys().hasAll(['updatedAt']) || data.updatedAt == request.time || data.updatedAt is string) &&
+             (!data.keys().hasAll(['role']) || (data.role is string && data.role.size() <= 50)) &&
+             (!data.keys().hasAll(['context']) || (data.context is string && data.context.size() <= 2000)) &&
+             (!data.keys().hasAll(['diagnosticPriorities']) || (data.diagnosticPriorities is list && data.diagnosticPriorities.size() <= 20 && (data.diagnosticPriorities.size() == 0 || data.diagnosticPriorities[0] is string))) &&
+             (!data.keys().hasAll(['criticalInfrastructures']) || (data.criticalInfrastructures is string && data.criticalInfrastructures.size() <= 200000)) &&
+             (!data.keys().hasAll(['selectedLevers']) || (data.selectedLevers is list && data.selectedLevers.size() <= 30 && (data.selectedLevers.size() == 0 || data.selectedLevers[0] is string))) &&
+             (!data.keys().hasAll(['resilienceIndex']) || (data.resilienceIndex is number)) &&
+             (!data.keys().hasAll(['messages']) || (data.messages is string && data.messages.size() <= 500000)) &&
+             (!data.keys().hasAll(['lastScenario']) || (data.lastScenario is string && data.lastScenario.size() <= 500000) || data.lastScenario == null) &&
+             (!data.keys().hasAll(['scenarioAssumptions']) || (data.scenarioAssumptions is string && data.scenarioAssumptions.size() <= 500000) || data.scenarioAssumptions == null) &&
+             (!data.keys().hasAll(['scenarioImage']) || (data.scenarioImage is string && data.scenarioImage.size() <= 500000) || data.scenarioImage == null) &&
+             (!data.keys().hasAll(['lastAnalysis']) || (data.lastAnalysis is string && data.lastAnalysis.size() <= 500000) || data.lastAnalysis == null);
+    }
+
+    function isValidProjectUpdate(data) {
+      return data.ownerId == existing().ownerId &&
+             (!data.keys().hasAll(['createdAt']) || data.createdAt == existing().createdAt) &&
+             (!data.keys().hasAll(['updatedAt']) || data.updatedAt == request.time || data.updatedAt is string) &&
+             (!data.keys().hasAll(['name']) || (data.name is string && data.name.size() <= 200)) &&
+             (!data.keys().hasAll(['zone']) || (data.zone is string && data.zone.size() <= 300)) &&
+             (!data.keys().hasAll(['role']) || (data.role is string && data.role.size() <= 50)) &&
+             (!data.keys().hasAll(['context']) || (data.context is string && data.context.size() <= 2000)) &&
+             (!data.keys().hasAll(['diagnosticPriorities']) || (data.diagnosticPriorities is list && data.diagnosticPriorities.size() <= 20)) &&
+             (!data.keys().hasAll(['criticalInfrastructures']) || (data.criticalInfrastructures is string && data.criticalInfrastructures.size() <= 200000)) &&
+             (!data.keys().hasAll(['selectedLevers']) || (data.selectedLevers is list && data.selectedLevers.size() <= 30)) &&
+             (!data.keys().hasAll(['resilienceIndex']) || (data.resilienceIndex is number)) &&
+             (!data.keys().hasAll(['messages']) || (data.messages is string && data.messages.size() <= 500000)) &&
+             (!data.keys().hasAll(['lastScenario']) || (data.lastScenario is string && data.lastScenario.size() <= 500000) || data.lastScenario == null) &&
+             (!data.keys().hasAll(['scenarioAssumptions']) || (data.scenarioAssumptions is string && data.scenarioAssumptions.size() <= 500000) || data.scenarioAssumptions == null) &&
+             (!data.keys().hasAll(['scenarioImage']) || (data.scenarioImage is string && data.scenarioImage.size() <= 500000) || data.scenarioImage == null) &&
+             (!data.keys().hasAll(['lastAnalysis']) || (data.lastAnalysis is string && data.lastAnalysis.size() <= 500000) || data.lastAnalysis == null);
+    }
+
+    match /projects/{projectId} {
+      allow get: if isSignedIn() && isValidId(projectId) && existing().ownerId == request.auth.uid;
+      allow list: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+      allow create: if isSignedIn() && isValidId(projectId) && isValidProject(incoming());
+      allow update: if isSignedIn() && isValidId(projectId) && existing().ownerId == request.auth.uid &&
+        isValidProjectUpdate(incoming()) &&
+        incoming().diff(existing()).affectedKeys().hasOnly([
+          'name', 'zone', 'role', 'context', 'diagnosticPriorities', 
+          'criticalInfrastructures', 'selectedLevers', 'resilienceIndex', 
+          'messages', 'lastScenario', 'scenarioAssumptions', 'scenarioImage', 
+          'lastAnalysis', 'updatedAt'
+        ]);
+      allow delete: if isSignedIn() && isValidId(projectId) && existing().ownerId == request.auth.uid;
+    }
+  }
+}
+

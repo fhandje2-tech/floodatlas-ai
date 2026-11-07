@@ -1,0 +1,11 @@
+{
+  "title": "Cartographie & Risques",
+  "layers": "Couches SIG",
+  "floodRisk": "Aléa Inondation",
+  "imperviousness": "Imperméabilisation",
+  "relief": "Relief & Topographie",
+  "infrastructures": "Infrastructures critiques",
+  "analyzeZone": "Analyser la Zone",
+  "drawZone": "Tracer un périmètre",
+  "searchPlaceholder": "Rechercher une commune, adresse ou coordonnées..."
+}

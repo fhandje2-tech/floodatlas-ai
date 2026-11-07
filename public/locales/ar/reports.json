@@ -1,0 +1,10 @@
+{
+  "title": "Report Generator",
+  "subtitle": "Decision-making briefs for elected officials and technical stakeholders.",
+  "executiveSummary": "AI Executive Summary",
+  "exportPdf": "Export PDF",
+  "print": "Print Brief",
+  "costBenefit": "Cost / Benefit Analysis (CBA)",
+  "vulnerability": "Vulnerability Diagnosis",
+  "natureSolutions": "Nature-Based Solutions"
+}

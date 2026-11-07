@@ -1,0 +1,50 @@
+{
+  "prepWorkspace": "Preparing your workspace...",
+  "start": "Start",
+  "continue": "Continue",
+  "welcomeName": "Welcome to FloodAtlas AI, {{name}}.",
+  "welcomeDefault": "Welcome to FloodAtlas AI.",
+  "setupIn2Min": "Let's set up your workspace in 2 minutes.",
+  "profileSetAs": "We set up your profile as ",
+  "workspaceIncludes": "Your workspace includes: territory risk mapping, automated reports for elected officials, and scenario simulations for urban planning decisions.",
+  "whereDoYouWork": "Where do you work?",
+  "addUpTo5Zones": "Add up to 5 zones. We'll pre-load risk data for each.",
+  "searchAddress": "Search address",
+  "uploadFile": "Upload file",
+  "searchPlaceholder": "Search an address, municipality, or enter custom name...",
+  "typeLocationPrompt": "Type a location to search, or press Enter to add a custom zone.",
+  "dragDropPrompt": "Drag and drop your GeoJSON or SHP file here",
+  "maxFileSize": "Maximum file size 50MB",
+  "browseFiles": "Browse Files",
+  "noZonesSelected": "No zones selected yet.",
+  "whatArePriorities": "What are your territorial priorities?",
+  "prioritiesDesc": "These choices will customize FloodAtlas AI's Sponge City recommendations.",
+  "workspaceReady": "Your project workspace is ready.",
+  "fiveExpertModules": "5 expert AI-powered modules to build a resilient territory.",
+  
+  "newProjectTitle": "New Project",
+  "newProjectDesc": "Set up a new isolated workspace for your territory.",
+  "projectName": "Project Name",
+  "projectNamePlaceholder": "e.g. Flood Risk Assessment 2026",
+  "territoryZone": "Territory / Zone",
+  "territoryZonePlaceholder": "City, region, or address...",
+  "yourProfile": "Your Profile / Role",
+  "briefContext": "Brief Context (Optional)",
+  "briefContextPlaceholder": "What are the main objectives of this project?",
+  "cancel": "Cancel",
+  "createProject": "Create Project",
+  
+  "roles": {
+    "Municipality": "Municipality",
+    "Developer": "Developer",
+    "Consultancy": "Consultancy",
+    "RiskManager": "Risk Manager"
+  },
+  "priorities": {
+    "Desimpermeabilisation": "De-sealing (Ville Éponge)",
+    "GestionRuissellement": "Runoff management",
+    "IlotsChaleur": "Heat islands reduction",
+    "Vegetalisation": "Urban greening",
+    "PreservationBiodiversite": "Biodiversity preservation"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Paramètres",
+  "tabs": {
+    "profile": "Mon Profil",
+    "organization": "Organisation",
+    "notifications": "Notifications",
+    "security": "Sécurité & Accès",
+    "billing": "Facturation & Plans",
+    "preferences": "Préférences"
+  },
+  "preferences": {
+    "title": "Préférences d'Affichage & Langue",
+    "desc": "Personnalisez la langue de l'interface et les unités de mesure de vos analyses territoriales.",
+    "languageSection": "Langue de l'interface",
+    "languageDesc": "Choisissez la langue principale de l'application et des réponses de l'Assistant IA.",
+    "unitsSection": "Unités de mesure",
+    "unitsDesc": "Unités par défaut pour les surfaces et calculs de ruissellement.",
+    "metric": "Métrique (m², hectares, m³/h)",
+    "imperial": "Impérial (sq ft, acres, cfs)",
+    "persistentBadge": "Persistance active : Vos préférences sont sauvegardées automatiquement."
+  }
+}

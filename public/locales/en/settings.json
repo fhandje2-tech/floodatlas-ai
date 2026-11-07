@@ -1,0 +1,22 @@
+{
+  "title": "Settings",
+  "tabs": {
+    "profile": "My Profile",
+    "organization": "Organization",
+    "notifications": "Notifications",
+    "security": "Security & Access",
+    "billing": "Billing & Plans",
+    "preferences": "Preferences"
+  },
+  "preferences": {
+    "title": "Display & Language Preferences",
+    "desc": "Customize interface language and measurement units for territorial assessments.",
+    "languageSection": "Interface Language",
+    "languageDesc": "Select the primary language for the app and AI Assistant responses.",
+    "unitsSection": "Measurement Units",
+    "unitsDesc": "Default units for land areas and runoff calculations.",
+    "metric": "Metric (m², hectares, m³/h)",
+    "imperial": "Imperial (sq ft, acres, cfs)",
+    "persistentBadge": "Persistent state: Your preferences are automatically saved."
+  }
+}

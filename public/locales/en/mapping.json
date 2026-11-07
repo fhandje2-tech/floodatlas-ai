@@ -1,0 +1,11 @@
+{
+  "title": "Mapping & Hazards",
+  "layers": "GIS Layers",
+  "floodRisk": "Flood Risk",
+  "imperviousness": "Imperviousness",
+  "relief": "Relief & Topography",
+  "infrastructures": "Critical Infrastructures",
+  "analyzeZone": "Analyze Zone",
+  "drawZone": "Draw Boundary",
+  "searchPlaceholder": "Search municipality, address or coordinates..."
+}

@@ -1,0 +1,43 @@
+{
+  "greeting": "مرحباً",
+  "nav": {
+    "home": "الرئيسية",
+    "assistant": "أطلس (Atlas)",
+    "mapping": "الخرائط والتحليل",
+    "reports": "التقارير",
+    "scenarios": "محاكاة السيناريوهات",
+    "settings": "الإعدادات",
+    "newProject": "مشروع جديد"
+  },
+  "actions": {
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "close": "إغلاق",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "confirm": "تأكيد",
+    "download": "تحميل",
+    "export": "تصدير",
+    "back": "رجوع",
+    "next": "التالي",
+    "finish": "إنهاء",
+    "loading": "جاري التحميل...",
+    "search": "بحث...",
+    "refresh": "تحديث"
+  },
+  "language": {
+    "title": "اللغة",
+    "fr": "Français",
+    "en": "English",
+    "de": "Deutsch",
+    "ar": "العربية",
+    "switch": "تغيير اللغة",
+    "saved": "تم حفظ اللغة بنجاح"
+  },
+  "status": {
+    "active": "نشط",
+    "completed": "مكتمل",
+    "inProgress": "قيد التنفيذ",
+    "draft": "مسودة"
+  }
+}

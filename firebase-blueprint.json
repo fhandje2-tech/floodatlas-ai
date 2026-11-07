@@ -1,0 +1,135 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "Information about the user",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "User's email",
+          "maxLength": 100
+        },
+        "role": {
+          "type": "string",
+          "description": "Default professional role",
+          "maxLength": 50
+        },
+        "name": {
+          "type": "string",
+          "description": "User display name",
+          "maxLength": 100
+        },
+        "language": {
+          "type": "string",
+          "description": "Preferred language code",
+          "maxLength": 10
+        },
+        "onboardingComplete": {
+          "type": "boolean",
+          "description": "Whether the user completed onboarding"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["email", "createdAt"]
+    },
+    "Project": {
+      "title": "Sponge City Project",
+      "description": "A territorial analysis and resilience project",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "description": "User ID of the project owner",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\\\-]+$"
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "zone": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "role": {
+          "type": "string",
+          "maxLength": 50
+        },
+        "context": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "diagnosticPriorities": {
+          "type": "array",
+          "items": { "type": "string" },
+          "maxLength": 20
+        },
+        "criticalInfrastructures": {
+          "type": "string",
+          "description": "JSON string of infrastructures",
+          "maxLength": 200000
+        },
+        "selectedLevers": {
+          "type": "array",
+          "items": { "type": "string" },
+          "maxLength": 30
+        },
+        "resilienceIndex": {
+          "type": "number"
+        },
+        "messages": {
+          "type": "string",
+          "description": "JSON string of chat messages",
+          "maxLength": 500000
+        },
+        "lastScenario": {
+          "type": "string",
+          "description": "JSON string of scenario data",
+          "maxLength": 500000
+        },
+        "scenarioAssumptions": {
+          "type": "string",
+          "description": "JSON string of scenario assumptions",
+          "maxLength": 500000
+        },
+        "scenarioImage": {
+          "type": "string",
+          "description": "URL or base64 of generated scenario visual",
+          "maxLength": 500000
+        },
+        "lastAnalysis": {
+          "type": "string",
+          "description": "JSON string of spatial analysis results",
+          "maxLength": 500000
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["ownerId", "name", "zone", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Stores user profile information"
+    },
+    "/projects/{projectId}": {
+      "schema": "Project",
+      "description": "Stores resilience projects"
+    }
+  }
+}

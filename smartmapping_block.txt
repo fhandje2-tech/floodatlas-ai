@@ -1,0 +1,131 @@
+   220	             setActiveFeature({
+   221	                name: "Point d'intérêt",
+   222	                type: "Zone non identifiée",
+   223	                lng,
+   224	                lat
+   225	             });
+   226	          }
+   227	        } catch(err) {
+   228	           setActiveFeature({
+   229	              name: "Point d'intérêt",
+   230	              type: "Zone analysée",
+   231	              lng,
+   232	              lat
+   233	           });
+   234	        }
+   235	      });
+   236	    });
+   237	
+   238	  
+   239	  React.useEffect(() => {
+   240	    if (!map.current) return;
+   241	    const updateLayers = () => {
+   242	      const mapObj = map.current;
+   243	      if (!mapObj || !mapObj.isStyleLoaded()) return;
+   244	
+   245	      // Clean up
+   246	      ['diag-heat', 'scen-circles'].forEach(l => {
+   247	        if (mapObj.getLayer(l)) mapObj.removeLayer(l);
+   248	      });
+   249	      ['diag-src', 'scen-src'].forEach(s => {
+   250	        if (mapObj.getSource(s)) mapObj.removeSource(s);
+   251	      });
+   252	
+   253	      const center = mapObj.getCenter();
+   254	      if (!center) return;
+   255	
+   256	      const generatePoints = (count: number, radius: number, isGood: boolean) => {
+   257	        const features = [];
+   258	        for (let i = 0; i < count; i++) {
+   259	          const r = radius * Math.sqrt(Math.random());
+   260	          const theta = Math.random() * 2 * Math.PI;
+   261	          const lng = center.lng + r * Math.cos(theta);
+   262	          const lat = center.lat + r * Math.sin(theta) * 0.7;
+   263	          features.push({
+   264	            type: 'Feature',
+   265	            properties: { value: Math.random() * 100, type: isGood ? 'sponge' : 'risk' },
+   266	            geometry: { type: 'Point', coordinates: [lng, lat] }
+   267	          });
+   268	        }
+   269	        return { type: 'FeatureCollection', features };
+   270	      };
+   271	
+   272	      if (showAnalysisPanel) {
+   273	        mapObj.addSource('diag-src', { type: 'geojson', data: generatePoints(300, 0.05, false) as any });
+   274	        mapObj.addLayer({
+   275	          id: 'diag-heat',
+   276	          type: 'heatmap',
+   277	          source: 'diag-src',
+   278	          paint: {
+   279	            'heatmap-weight': ['interpolate', ['linear'], ['get', 'value'], 0, 0, 100, 1],
+   280	            'heatmap-intensity': 1,
+   281	            'heatmap-color': [
+   282	              'interpolate', ['linear'], ['heatmap-density'],
+   283	              0, 'rgba(0,0,0,0)',
+   284	              0.2, 'rgba(33,102,172, 0.5)',
+   285	              0.4, 'rgba(103,169,207, 0.7)',
+   286	              0.6, 'rgba(253,219,199, 0.8)',
+   287	              0.8, 'rgba(239,138,98, 0.9)',
+   288	              1, 'rgba(255,50,50, 1)'
+   289	            ],
+   290	            'heatmap-radius': ['interpolate', ['linear'], ['zoom'], 10, 15, 15, 40],
+   291	            'heatmap-opacity': 0.8
+   292	          }
+   293	        });
+   294	      }
+   295	
+   296	      if (showScenarioPanel) {
+   297	        mapObj.addSource('scen-src', { type: 'geojson', data: generatePoints(150, 0.04, true) as any });
+   298	        mapObj.addLayer({
+   299	          id: 'scen-circles',
+   300	          type: 'circle',
+   301	          source: 'scen-src',
+   302	          paint: {
+   303	            'circle-radius': ['interpolate', ['linear'], ['zoom'], 10, 4, 15, 12],
+   304	            'circle-color': '#14b8a6',
+   305	            'circle-opacity': 0.7,
+   306	            'circle-stroke-width': 2,
+   307	            'circle-stroke-color': '#ffffff'
+   308	          }
+   309	        });
+   310	      }
+   311	    };
+   312	
+   313	    if (map.current.isStyleLoaded()) {
+   314	      updateLayers();
+   315	    } else {
+   316	      map.current.once('styledata', updateLayers);
+   317	    }
+   318	  }, [showAnalysisPanel, showScenarioPanel]);
+   319	
+   320	  return () => {
+   321	      map.current?.remove();
+   322	      map.current = null;
+   323	    };
+   324	  }, []);
+   325	  
+   326	  const analyseFeature = () => {
+   327	    alert("Running detailed hydrological analysis for this feature...");
+   328	  };
+   329	
+   330	  return (
+   331	    <>
+   332	    <PanelGroup orientation="horizontal" className="flex-1 h-full w-full bg-void overflow-hidden relative font-body flex">
+   333	      {/* Left Panels (Analysis / Scenarios) */}
+   334	      {(showAnalysisPanel || showScenarioPanel) && (
+   335	        <>
+   336	          <Panel defaultSize={35} minSize={25} maxSize={60} className="h-full z-20 flex flex-col shadow-2xl">
+   337	            {showAnalysisPanel && <AnalysisPanel onClose={() => setShowAnalysisPanel(false)} onSimulate={() => { setShowAnalysisPanel(false); setShowScenarioPanel(true); }} />}
+   338	            {showScenarioPanel && <ScenarioPanel onClose={() => setShowScenarioPanel(false)} />}
+   339	          </Panel>
+   340	          <PanelResizeHandle className="w-1.5 bg-border hover:bg-brand-blue/50 active:bg-brand-blue transition-colors cursor-col-resize z-30" />
+   341	        </>
+   342	      )}
+   343	
+   344	      {/* Main Map Panel */}
+   345	      <Panel className="flex-1 relative h-full flex flex-col z-10 overflow-hidden min-w-[300px]">
+   346	        {/* Map Container */}
+   347	        <div ref={mapContainer} className="absolute inset-0 z-0 w-full h-full" />
+   348	        
+   349	        {/* Top Floating Bar */}
+   350	        <div className="absolute top-6 left-6 z-10 flex flex-col space-y-2">

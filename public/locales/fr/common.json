@@ -1,0 +1,43 @@
+{
+  "greeting": "Bonjour",
+  "nav": {
+    "home": "Accueil",
+    "assistant": "Atlas IA",
+    "mapping": "Cartographie",
+    "reports": "Rapports",
+    "scenarios": "Simulation Scénarios",
+    "settings": "Paramètres",
+    "newProject": "Nouveau Projet"
+  },
+  "actions": {
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "confirm": "Confirmer",
+    "download": "Télécharger",
+    "export": "Exporter",
+    "back": "Retour",
+    "next": "Suivant",
+    "finish": "Terminer",
+    "loading": "Chargement...",
+    "search": "Rechercher...",
+    "refresh": "Actualiser"
+  },
+  "language": {
+    "title": "Langue",
+    "fr": "Français",
+    "en": "English",
+    "de": "Deutsch",
+    "ar": "العربية",
+    "switch": "Changer de langue",
+    "saved": "Langue enregistrée avec succès"
+  },
+  "status": {
+    "active": "Actif",
+    "completed": "Terminé",
+    "inProgress": "En cours",
+    "draft": "Brouillon"
+  }
+}

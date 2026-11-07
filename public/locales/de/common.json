@@ -1,0 +1,43 @@
+{
+  "greeting": "Hallo",
+  "nav": {
+    "home": "Startseite",
+    "assistant": "Atlas KI",
+    "mapping": "Kartographie",
+    "reports": "Berichte",
+    "scenarios": "Szenarien-Simulation",
+    "settings": "Einstellungen",
+    "newProject": "Neues Projekt"
+  },
+  "actions": {
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "confirm": "Bestätigen",
+    "download": "Herunterladen",
+    "export": "Exportieren",
+    "back": "Zurück",
+    "next": "Weiter",
+    "finish": "Abschließen",
+    "loading": "Laden...",
+    "search": "Suchen...",
+    "refresh": "Aktualisieren"
+  },
+  "language": {
+    "title": "Sprache",
+    "fr": "Français",
+    "en": "English",
+    "de": "Deutsch",
+    "ar": "العربية",
+    "switch": "Sprache ändern",
+    "saved": "Sprache erfolgreich gespeichert"
+  },
+  "status": {
+    "active": "Aktiv",
+    "completed": "Abgeschlossen",
+    "inProgress": "In Bearbeitung",
+    "draft": "Entwurf"
+  }
+}

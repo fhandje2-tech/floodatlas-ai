@@ -1,0 +1,6 @@
+{
+  "name": "FloodAtlas AI",
+  "description": "Plateforme d'intelligence territoriale pour la résilience climatique et les Villes Éponges — Issu des travaux de recherche MBA De Vinci par Fabien Aimé HANDJE POUNJIEU.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

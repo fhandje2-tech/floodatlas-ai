@@ -1,0 +1,50 @@
+{
+  "prepWorkspace": "جاري تجهيز مساحة العمل الخاصة بك...",
+  "start": "ابدأ الآن",
+  "continue": "متابعة",
+  "welcomeName": "مرحباً بك في FloodAtlas الذكي، {{name}}.",
+  "welcomeDefault": "مرحباً بك في FloodAtlas الذكي.",
+  "setupIn2Min": "دعنا نهيئ مساحة عملك في دقيقتين فقط.",
+  "profileSetAs": "لقد قمنا بتعيين ملفك الشخصي كـ ",
+  "workspaceIncludes": "تتضمن مساحة عملك: خرائط مخاطر الفيضانات، تقارير آلية لصناع القرار، ومحاكاة حلول المدينة الإسفنجية.",
+  "whereDoYouWork": "ما هي المنطقة أو المدينة التي تعمل عليها؟",
+  "addUpTo5Zones": "أضف ما يصل إلى 5 مناطق. سنقوم بتحميل بيانات المخاطر مسبقاً لكل منها.",
+  "searchAddress": "البحث عن عنوان",
+  "uploadFile": "رفع ملف جغرافي",
+  "searchPlaceholder": "ابحث عن عنوان، بلدية، أو أدخل اسماً مخصصاً...",
+  "typeLocationPrompt": "اكتب موقعاً للبحث، أو اضغط Enter لإضافة نطاق جغرافي مخصص.",
+  "dragDropPrompt": "اسحب وأفلت ملف GeoJSON أو SHP هنا",
+  "maxFileSize": "أقصى حجم للملف 50 ميغابايت",
+  "browseFiles": "تصفح الملفات",
+  "noZonesSelected": "لم يتم تحديد أي منطقة بعد.",
+  "whatArePriorities": "ما هي أولوياتك الإقليمية والمناخية؟",
+  "prioritiesDesc": "ستحدد هذه الاختيارات التوصيات الهيدروليكية لمدينة الإسفنج.",
+  "workspaceReady": "مساحة مشروعك أصبحت جاهزة تماماً.",
+  "fiveExpertModules": "5 وحدات خبيرة مدعومة بالذكاء الاصطناعي لبناء إقليم مرن ومستدام.",
+  
+  "newProjectTitle": "مشروع جديد",
+  "newProjectDesc": "إنشاء مساحة عمل معزولة ومخصصة لنطاقك الجغرافي.",
+  "projectName": "اسم المشروع",
+  "projectNamePlaceholder": "مثال: خطة الوقاية من السيول 2026",
+  "territoryZone": "الإقليم / النطاق الجغرافي",
+  "territoryZonePlaceholder": "مدينة، محافظة، أو عنوان محدد...",
+  "yourProfile": "ملفك المهني / صفتك",
+  "briefContext": "سياق المشروع (اختياري)",
+  "briefContextPlaceholder": "ما هي الأهداف الرئيسية والاستراتيجية لهذا المشروع؟",
+  "cancel": "إلغاء",
+  "createProject": "إنشاء المشروع",
+  
+  "roles": {
+    "Municipality": "بلدية / جماعة محلية",
+    "Developer": "مطور عقاري وعمراني",
+    "Consultancy": "مكتب دراسات وهندسة",
+    "RiskManager": "مدير مخاطر الأزمات"
+  },
+  "priorities": {
+    "Desimpermeabilisation": "إزالة العزل الخرساني (المدينة الإسفنجية)",
+    "GestionRuissellement": "إدارة مياه السيول والسيول المفاجئة",
+    "IlotsChaleur": "الحد من الجزر الحرارية الحضرية",
+    "Vegetalisation": "التشجير والمساحات الخضراء",
+    "PreservationBiodiversite": "الحفاظ على التنوع الحيوي والبيئي"
+  }
+}

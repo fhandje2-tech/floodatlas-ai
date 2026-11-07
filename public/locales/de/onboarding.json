@@ -1,0 +1,50 @@
+{
+  "prepWorkspace": "Ihr Arbeitsbereich wird vorbereitet...",
+  "start": "Starten",
+  "continue": "Weiter",
+  "welcomeName": "Willkommen bei FloodAtlas KI, {{name}}.",
+  "welcomeDefault": "Willkommen bei FloodAtlas KI.",
+  "setupIn2Min": "Richten wir Ihren Arbeitsbereich in 2 Minuten ein.",
+  "profileSetAs": "Wir haben Ihr Profil eingerichtet als ",
+  "workspaceIncludes": "Ihr Arbeitsbereich umfasst: Risikokartierung, automatisierte Berichte für Entscheidungsträger und Simulation von Schwammstadt-Szenarien.",
+  "whereDoYouWork": "An welchem Gebiet arbeiten Sie?",
+  "addUpTo5Zones": "Fügen Sie bis zu 5 Zonen hinzu. Wir laden die Risikodaten für jede vor.",
+  "searchAddress": "Adresse suchen",
+  "uploadFile": "Datei hochladen",
+  "searchPlaceholder": "Adresse, Gemeinde oder benutzerdefinierten Namen suchen...",
+  "typeLocationPrompt": "Geben Sie einen Ort ein oder drücken Sie Enter, um eine Zone hinzuzufügen.",
+  "dragDropPrompt": "GeoJSON- oder SHP-Datei hierher ziehen",
+  "maxFileSize": "Maximale Dateigröße 50MB",
+  "browseFiles": "Dateien durchsuchen",
+  "noZonesSelected": "Noch keine Zone ausgewählt.",
+  "whatArePriorities": "Was sind Ihre territorialen Prioritäten?",
+  "prioritiesDesc": "Diese Auswahl passt die Schwammstadt-Empfehlungen der KI an.",
+  "workspaceReady": "Ihr Projekt-Arbeitsbereich ist bereit.",
+  "fiveExpertModules": "5 KI-gestützte Expertenmodule für ein widerstandsfähiges Gebiet.",
+  
+  "newProjectTitle": "Neues Projekt",
+  "newProjectDesc": "Richten Sie einen isolierten Arbeitsbereich für Ihr Gebiet ein.",
+  "projectName": "Projektname",
+  "projectNamePlaceholder": "z. B. Hochwasserschutzplan 2026",
+  "territoryZone": "Gebiet / Zone",
+  "territoryZonePlaceholder": "Stadt, Region oder Adresse...",
+  "yourProfile": "Ihr Profil / Rolle",
+  "briefContext": "Kontext (optional)",
+  "briefContextPlaceholder": "Was sind die Hauptziele dieses Projekts?",
+  "cancel": "Abbrechen",
+  "createProject": "Projekt erstellen",
+  
+  "roles": {
+    "Municipality": "Kommune",
+    "Developer": "Entwickler",
+    "Consultancy": "Ingenieurbüro",
+    "RiskManager": "Risikomanager"
+  },
+  "priorities": {
+    "Desimpermeabilisation": "Entsiegelung (Schwammstadt)",
+    "GestionRuissellement": "Regenwassermanagement",
+    "IlotsChaleur": "Hitzeinsel-Reduzierung",
+    "Vegetalisation": "Urbane Begrünung",
+    "PreservationBiodiversite": "Erhalt der Biodiversität"
+  }
+}

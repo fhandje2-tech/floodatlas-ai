@@ -1,0 +1,29 @@
+{
+  "title": "Dashboard",
+  "subtitle": "Manage your territories and access resilience analysis modules.",
+  "newProject": "New Project",
+  "expertModules": "Expert Modules",
+  "recentProjects": "Recent Projects",
+  "noProjects": "No projects yet. Create your first project!",
+  "modules": {
+    "mapping": {
+      "name": "Mapping & AI Diagnosis",
+      "desc": "SmartMapping & Risks"
+    },
+    "reports": {
+      "name": "Report Generator",
+      "desc": "Resilience Briefs & Summaries"
+    },
+    "scenarios": {
+      "name": "Scenario Simulation",
+      "desc": "Sponge City & Nature-based Solutions"
+    },
+    "assistant": {
+      "name": "Expert AI Assistant",
+      "desc": "Interactive Territorial Advisor"
+    }
+  },
+  "openProject": "Open",
+  "territory": "Territory",
+  "resilienceIndex": "Resilience Score"
+}

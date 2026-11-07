@@ -1,0 +1,43 @@
+{
+  "greeting": "Hello",
+  "nav": {
+    "home": "Home",
+    "assistant": "Atlas AI",
+    "mapping": "Smart Mapping",
+    "reports": "Reports",
+    "scenarios": "Scenario Simulation",
+    "settings": "Settings",
+    "newProject": "New Project"
+  },
+  "actions": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "delete": "Delete",
+    "edit": "Edit",
+    "confirm": "Confirm",
+    "download": "Download",
+    "export": "Export",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish",
+    "loading": "Loading...",
+    "search": "Search...",
+    "refresh": "Refresh"
+  },
+  "language": {
+    "title": "Language",
+    "fr": "Français",
+    "en": "English",
+    "de": "Deutsch",
+    "ar": "العربية",
+    "switch": "Switch language",
+    "saved": "Language saved successfully"
+  },
+  "status": {
+    "active": "Active",
+    "completed": "Completed",
+    "inProgress": "In Progress",
+    "draft": "Draft"
+  }
+}
